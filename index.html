@@ -6,15 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap" rel="stylesheet">
     <script src="./test.js" defer></script>
     <style>
         * {
             margin: 0;
+            font-family: 'Inconsolata', monospace;
         }
 
-        html, body {
+        html,
+        body {
             height: 100%;
         }
+
         .container {
             display: flex;
             justify-content: center;
@@ -23,6 +29,7 @@
             flex-direction: column;
             height: 100%;
         }
+
         .bar {
             width: 2px;
             padding: 2px;
@@ -30,18 +37,63 @@
             display: inline-block;
             margin: 0 1px;
         }
+
+        .buttons {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            bottom: 0px;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            margin: 0 20px;
+            border: 0;
+        }
+
+        #start {
+            background-color: rgb(27, 190, 27);
+        }
+
+        #gen {
+            background-color: rgb(27, 190, 27);
+
+        }
+
+        #heading {
+            text-align: center;
+            font-size: 30px;
+            padding-top: 5px;
+        }
+
+        @media (max-width: 600) {
+            .bar {
+                width: 1px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <header id="heading">Sort Visualizer</header>
     <div class="container">
         <div id="root"></div>
-        <input type="number" id="speed" placeholder="speed">
-        <input type="number" id="size" placeholder="size">
-        <button id="start">Start</button>
-        <button id="reverse">Reverse</button>
-        <button id="random">Sort random array</button>
-
+        <div class="inputs">
+            <!-- <input type="number" id="speed" placeholder="speed" /> -->
+            <input type="number" id="size" placeholder="size" />
+            <select id="algs">
+                <option value="0">Bubble Sort</option>
+                <option value="1">Insertion Sort</option>
+            </select>
+        </div>
+        <div class="buttons">
+            <button id="start">Start</button>
+            <button id="gen">Generate Array</button>
+            <!-- <button id="reverse">Reverse</button>
+            <button id="random">Sort random array</button> -->
+        </div>
     </div>
 </body>
 
