@@ -100,7 +100,7 @@ function display(array) {
 function getArray(size) {
     const array = [];
     for (let i = 0; i < size; i++) {
-        const bar = document.createElement('bar');
+        const bar = document.createElement('div');
         const value = Math.floor(Math.random() * 50) + 5;
         bar.style.height = `${value}px`;
         bar.style.backgroundColor = `rgb(255,0,0, ${1 - 1 / 10})`;
